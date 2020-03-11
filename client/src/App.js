@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import SavedList from './Movies/SavedList';
+import { Router } from 'express';
 
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
@@ -12,7 +13,9 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>Replace this Div with your Routes</div>
+      {/* <div>Replace this Div with your Routes</div> */}
+      <Route exact path = "/"> </Route>
+      <Route path= "/movies/id"></Route>
     </div>
   );
 };
