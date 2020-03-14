@@ -5,6 +5,7 @@ const Movie = (props) => {
 const [movie, setMovie] = useState();
 
 
+
   useEffect(() => {
     // const item= movie.find(thing=>thing);
     const id = props.match.params.id;

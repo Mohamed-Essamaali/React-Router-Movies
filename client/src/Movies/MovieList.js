@@ -33,6 +33,7 @@ const MovieList = props => {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
+    
     <div className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
