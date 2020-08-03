@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Link,useParams} from 'react-router-dom';
 
 const Movie = (props) => {
 const [movie, setMovie] = useState();
 
 
-
+let {id}= useParams();
   useEffect(() => {
     // const item= movie.find(thing=>thing);
-    const id = props.match.params.id;
+    // const id = props.match.params.id;
     // console.log("movie props" ,props);
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
@@ -30,6 +31,7 @@ const [movie, setMovie] = useState();
   // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;
   //   addToSavedList(movie)
+
   // }
 
   if (!movie) {
@@ -38,6 +40,7 @@ const [movie, setMovie] = useState();
 
   const { title, director, metascore, stars } = movie;
   return (
+  
     <div className="save-wrapper">
       <div className="movie-card">
         <h2>{title}</h2>
@@ -55,8 +58,10 @@ const [movie, setMovie] = useState();
           </div>
         ))}
       </div>
-      <div className="save-button" onClick = {props.addToSavedList()}>Save</div>
+      <div className="save-button" >Save</div>
     </div>
+  
+  
   );
 }
 
