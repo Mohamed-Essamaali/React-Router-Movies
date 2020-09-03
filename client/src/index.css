@@ -42,6 +42,10 @@ body {
 
 .saved-movie {
   margin: 0 10px;
+
+}
+.saved-movie  a{
+  text-decoration:none;
 }
 .saved-active {
   color: blue;

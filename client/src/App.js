@@ -10,9 +10,18 @@ const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
   const addToSavedList = movie => {
-    setSavedList( [...savedList, movie] );
+
+  //  let prev = [...savedList];
+  //  prev.map(el=>{
+  //   if(el.id!=movie.id){
+  //     console.log('savelist elements',el)
+  //   }
+  //  })
+   setSavedList( [...savedList,movie] );
+
+  
   };
- console.log('saved movies', savedList)
+//  console.log('saved movies', savedList)
 
   return (
     <div>
@@ -23,11 +32,10 @@ const App = () => {
       </div> */}
       
       
-      <Route exact  path='/'>
-        <MovieList/>
-      </Route >
+      <Route exact  path='/' component={MovieList}/>
+ 
       <Route path={`/movies/:movieId`}>
-        <Movie addToSavedList={addToSavedList}/>
+        <Movie addToSavedList={addToSavedList} />
       </Route>
     </div>
   );
